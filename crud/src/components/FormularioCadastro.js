@@ -5,10 +5,10 @@ const FormularioCadastro = (props) =>{
     
 
     const CamposIniciaisDeValores = {
-        NOME:'',
-        notaUm:'',
-        notaDois:'',
-        notaTres: '',
+        Nome:'',
+        NotaUm:'',
+        NotaDois:'',
+        NotaTres: '',
         NotaQuatro:''
       
     }
