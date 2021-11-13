@@ -5,7 +5,7 @@ import fireDb from '../database/firebase'
 
 const Cadastro = () => {
 
-    const [dadosPacintes, setDadosPacientes] = useState({})
+    const [dadosAlunos, setDadosAlunos] = useState({})
 
     let [idAtual, setIdAtual] = useState('')
 
@@ -13,11 +13,11 @@ const Cadastro = () => {
     useEffect(() => {
         fireDb.child('cadastros').on('value', dbPhoto => {
             if (dbPhoto.val() != null) {
-                setDadosPacientes({
+                setDadosAlunos({
                     ...dbPhoto.val()
                 })
             } else {
-                setDadosPacientes({})
+                setDadosAlunos({})
             }
         })
     }, [])
@@ -73,11 +73,11 @@ const Cadastro = () => {
 
             <div className="row">
 
-                <div className="col-md-5">
-                    <FormularioCadastro {...({ addEedit, idAtual, dadosPacintes })} />
+                <div className="col-md-4">
+                    <FormularioCadastro {...({ addEedit, idAtual, dadosAlunos })} />
                 </div>
 
-                <div className="col-md-7">
+                <div className="col-8">
                     <table className="table table-borderless table-stripped">
                         <thead className="thead-light">
                             <tr>
@@ -85,21 +85,24 @@ const Cadastro = () => {
                                 <td>NotaUm</td>
                                 <td>NotaDois</td>
                                 <td>NotaTres</td>
+                                <td>NotaQuatro</td>
+                                
                                 
                             </tr>
                         </thead>
 
                         <tbody>
                             {
-                                Object.keys(dadosPacintes).map(id => {
+                                Object.keys(dadosAlunos).map(id => {
                                     return <tr key={id}>
-                                        <td> {dadosPacintes[id].Nome}</td>
-                                        <td> {dadosPacintes[id].NotaUm}</td>
-                                        <td> {dadosPacintes[id].NotaDois}</td>
-                                        <td> {dadosPacintes[id].NotaTres}</td>
+                                        <td> {dadosAlunos[id].Nome}</td>
+                                        <td> {dadosAlunos[id].NotaUm}</td>
+                                        <td> {dadosAlunos[id].NotaDois}</td>
+                                        <td> {dadosAlunos[id].NotaTres}</td>
+                                        <td> {dadosAlunos[id].NotaQuatro}</td>
 
                                         <td>
-                                            <a className="btn btn-primary" onClick={() => { setIdAtual(id) }}>
+                                            <a className="btn btn-outline-success" onClick={() => { setIdAtual(id) }}>
                                                 <i className="fas fa-pencil-alt"></i>
                                             </a>
 

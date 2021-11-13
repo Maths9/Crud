@@ -41,10 +41,18 @@ body {
 }
 .jumbotron.jumbotron-fluid {
   background-color: rgb(74, 145, 112);
-  align-items:center;
+  align-items: center;
 }
 
 .input-group-text {
   text-decoration: none;
   display: none;
+}
+
+.btn-secondary {
+  background-color: rgb(74, 145, 112);
+}
+
+.container {
+  text-align: -webkit-center;
 }

@@ -8,7 +8,8 @@ const FormularioCadastro = (props) =>{
         NOME:'',
         notaUm:'',
         notaDois:'',
-        notaTres:'',
+        notaTres: '',
+        NotaQuatro:''
       
     }
 
@@ -22,10 +23,10 @@ const FormularioCadastro = (props) =>{
         }
         else {
             setValues({
-                ...props.dadosPacintes[props.idAtual]
+                ...props.dadosAlunos[props.idAtual]
             })
         }
-    }, [props.idAtual, props.dadosPacintes])
+    }, [props.idAtual, props.dadosAlunos])
 
     const manipuladorOnChange = e =>{
         let {name, value} = e.target
@@ -44,7 +45,7 @@ const FormularioCadastro = (props) =>{
 
     return (
         <form autoComplete="off" onSubmit={manipuladorFormEnvio}>
-            <div className="form-group input-group">
+            <div className="form-group input-group col-md-10">
                 <div className="input-grou-prepen">
                     <div className="input-group-text">
                     
@@ -52,12 +53,14 @@ const FormularioCadastro = (props) =>{
                 </div>
 
                 <input className="form-control" type="text" placeholder="Nome" name="Nome" value={values.Nome}
+                    
                 onChange={manipuladorOnChange}/>
             </div>
 
         
-            <div className="row">
-                <div className="form-group input-group col-md-6">
+            <div className="">
+               
+                <div className="form-group input-group col-md-5">
                     <div className="input-grou-prepen">
                         <div className="input-group-text">
                         
@@ -68,7 +71,7 @@ const FormularioCadastro = (props) =>{
                     onChange={manipuladorOnChange}/>
                 </div>
 
-                <div className="form-group input-group col-md-6">
+                <div className="form-group input-group col-md-5">
                     <div className="input-grou-prepen">
                         <div className="input-group-text">
                           
@@ -79,9 +82,10 @@ const FormularioCadastro = (props) =>{
                 </div>
             </div>
 
-            <div className="form-group input-group col-md-6">
-                <div className="input-grou-prepen">
+            <div className="form-group input-group col-md-5">
+                    <div className="input-grou-prepen">
                     <div className="input-group-text">
+                        
                        
                     </div>
                 </div>
@@ -90,9 +94,19 @@ const FormularioCadastro = (props) =>{
                 onChange={manipuladorOnChange}/>
             </div>
            
+            <div className="form-group input-group col-md-5">
+                    <div className="input-grou-prepen">
+                        <div className="input-group-text">
+                       
+                    </div>
+                </div>
+
+                <input className="form-control" type="number" placeholder="NotaQuatro" name="NotaQuatro" value={values.NotaQuatro}
+                onChange={manipuladorOnChange}/>
+            </div>
 
             <div className="form-group">
-                <input type="submit" value={props.idAtual == '' ? 'Cadastrar' : 'atualizar'} className="btn btn-primary btn-block" />
+                <input type="submit" value={props.idAtual == '' ? 'Cadastrar' : 'atualizar'} className="btn btn-secondary btn-block" />
             </div>
         </form>
 

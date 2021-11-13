@@ -4,7 +4,7 @@ import Cadastro from './components/Cadastro';
 function App() {
   return (
     <div className="row">
-      <div className="col-md-8 offset-md-2">
+      <div className="col-md-10 offset-md-1">
       <Cadastro />
 
       </div>
