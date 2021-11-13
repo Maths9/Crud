@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import fireDb from '../database/firebase'
 const FormularioCadastro = (props) =>{
 
-    //VARIAVEIS DE CAPTURA DE DADOS 
+    
 
     const CamposIniciaisDeValores = {
         matricula:'',
